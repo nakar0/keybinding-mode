@@ -415,6 +415,38 @@
           "text": "¥"
         },
         "when": "keybindingMode:enabled"
+      },
+      {
+        "command": "keybindingMode.handleKey",
+        "key": "shift+h",
+        "args": {
+          "text": "shift+h"
+        },
+        "when": "keybindingMode:enabled"
+      },
+      {
+        "command": "keybindingMode.handleKey",
+        "key": "shift+j",
+        "args": {
+          "text": "shift+j"
+        },
+        "when": "keybindingMode:enabled"
+      },
+      {
+        "command": "keybindingMode.handleKey",
+        "key": "shift+k",
+        "args": {
+          "text": "shift+k"
+        },
+        "when": "keybindingMode:enabled"
+      },
+      {
+        "command": "keybindingMode.handleKey",
+        "key": "shift+l",
+        "args": {
+          "text": "shift+l"
+        },
+        "when": "keybindingMode:enabled"
       }
     ],
     "commands": [
