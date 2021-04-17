@@ -1,20 +1,16 @@
 import { commands, ExtensionContext, StatusBarAlignment, window, workspace, WorkspaceConfiguration } from 'vscode';
 const { registerCommand, executeCommand } = commands;
-const { showInformationMessage } = window;
+
 
 const toggleCommandId = "keybindingMode.toggle";
 const handleKeyCommandId = 'keybindingMode.handleKey';
 
-const commandForLetter = (letter: string) => {
-  console.log(letter);
-
-  return (workspace
-    .getConfiguration('keybindingMode')
-    .get('letterCommandMapping', <string[]>[])
-    .find(letterCommandMappingString => letterCommandMappingString[0] === letter) || ''
-  )
-    .split(',')[1]
-};
+const commandForLetter = (letter: string) => (workspace
+  .getConfiguration('keybindingMode')
+  .get('letterCommandMapping', <string[]>[])
+  .map(letterCommandMappingString => letterCommandMappingString.split(','))
+  .find(letterCommandMapping => letterCommandMapping[0] === letter) || '')
+[1];
 
 export function activate(context: ExtensionContext) {
   const statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right, 9999999999);
